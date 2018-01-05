@@ -64,4 +64,4 @@ This is a problem when using npm run, it has to do with Mocha exiting with code 
 
 ## License
 
-This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md) file for details
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details
