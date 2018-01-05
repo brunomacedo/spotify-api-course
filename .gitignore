@@ -1,0 +1,46 @@
+### Basic ###
+# Apples Build
+*.build
+*.apples
+
+# Initialized files
+*.exe
+*.ini
+*.basic
+
+# Specs
+/.nyc_output
+/coverage
+
+### SVN ###
+.svn/
+
+### TortoiseGit ###
+# Project-level settings
+/.tgitconfig
+
+### Adobe ###
+# Adobe Source Files
+*.psd
+*.ai
+*.indd
+*.prproj
+*.aep
+
+### Node Modules ###
+/node_modules
+/node-json-generate
+package-lock.json
+
+# Build and Release Folders
+bin/
+bin-debug/
+bin-release/
+[Oo]bj/ # FlashDevelop obj
+[Bb]in/ # FlashDevelop bin
+
+# Executables
+*.swf
+*.air
+*.ipa
+*.apk
