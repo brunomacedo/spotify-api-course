@@ -1,7 +1,10 @@
-# Spotify API
-> TDD with JavaScript Course by William Justen
+# Spotify API Course
 
 A wrapper to work with the [Spotify Web API](https://developer.spotify.com/web-api/).
+
+## About the course
+
+TDD with JavaScript Course by William Justen
 
 ## Browser Support
 
