@@ -1,6 +1,6 @@
 {
   "name": "spotify-api-course",
-  "version": "0.0.0",
+  "version": "1.2.1",
   "description": "A wrapper to work with the Spotify API.",
   "main": "source/index.js",
   "scripts": {
