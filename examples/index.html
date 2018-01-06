@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <link rel="shortcut icon" href="https://developer.spotify.com/web-api/static/favicon.ico">
+  <title>Spotify API Course</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+<body>
+
+  <script src="../build/bundle.min.js"></script>
+
+  <script>
+    const albums = spotifyApiCourse.searchArtists('Incubus');
+    albums.then(data => {
+      markup = data.albums.items.map(item =>
+        `<img src="${item.images[0].url}" alt="${item.name}">`
+      ).join('');
+
+      console.log(markup);
+    });
+  </script>
+</body>
+</html>
