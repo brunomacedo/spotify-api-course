@@ -15,6 +15,7 @@ global.fetch = require('node-fetch');
  * Import my functions
  */
 import { search, searchArtists, searchAlbums, searchTracks, searchPlaylists } from '../source/main';
+import { API_URL } from '../source/config';
 
 describe('Spotify API Course', () => {
   /**
@@ -85,17 +86,17 @@ describe('Spotify API Course', () => {
         it('Passing one type', () => {
           const artists = search('Incubus', 'artist');
           expect(fetchedStub).to.have.been
-            .calledWith('https://api.spotify.com/v1/search?q=Incubus&type=artist');
+            .calledWith(`${API_URL}/search?q=Incubus&type=artist`);
 
           const albums = search('Incubus', 'album');
           expect(fetchedStub).to.have.been
-            .calledWith('https://api.spotify.com/v1/search?q=Incubus&type=album');
+            .calledWith(`${API_URL}/search?q=Incubus&type=album`);
         });
 
         it('Passing more than one type', () => {
           const artists = search('Incubus', ['artist', 'album']);
           expect(fetchedStub).to.have.been
-            .calledWith('https://api.spotify.com/v1/search?q=Incubus&type=artist,album');
+            .calledWith(`${API_URL}/search?q=Incubus&type=artist,album`);
         });
       });
     });
@@ -105,7 +106,7 @@ describe('Spotify API Course', () => {
         it('Passing more than one type', () => {
           const artists = searchArtists('Incubus');
           expect(fetchedStub).to.have.been
-            .calledWith('https://api.spotify.com/v1/search?q=Incubus&type=artist');
+            .calledWith(`${API_URL}/search?q=Incubus&type=artist`);
         });
       });
     });
