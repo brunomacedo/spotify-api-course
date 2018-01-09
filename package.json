@@ -1,16 +1,16 @@
 {
   "name": "spotify-api-course",
-  "version": "1.2.3",
+  "version": "1.2.5",
   "description": "A wrapper to work with the Spotify API.",
-  "main": "source/index.js",
+  "main": "lib/index.js",
   "scripts": {
     "clear:lib": "rimraf lib",
     "clear:build": "rimraf build",
     "clear:coverage": "rimraf coverage .nyc_output",
     "lib:source": "./node_modules/.bin/babel --out-dir lib source",
     "lib": "npm run clear:lib && npm run lib:source",
-    "build:scripts": "./node_modules/.bin/webpack --output-filename bundle.js",
-    "build:scripts:min": "./node_modules/.bin/webpack --output-filename bundle.min.js -p",
+    "build:scripts": "./node_modules/.bin/webpack --output-filename app.js",
+    "build:scripts:min": "./node_modules/.bin/webpack --output-filename app.min.js -p",
     "build": "npm run clear:build && npm run build:scripts && npm run build:scripts:min",
     "watch": "npm run build -- --watch",
     "lint": "./node_modules/.bin/eslint source/*.js",
@@ -18,7 +18,7 @@
     "test": "./node_modules/.bin/mocha specs/**/*.spec.js --require babel-register",
     "test:tdd": "npm run test -- --watch",
     "test:coverage": "npm run clear:coverage && nyc npm run test",
-    "server": "./node_modules/.bin/webpack-dev-server --inline --content-base build"
+    "server": "./node_modules/.bin/webpack-dev-server --inline --content-base examples"
   },
   "nyc": {
     "reporter": [
