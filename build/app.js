@@ -4,9 +4,9 @@
 	else if(typeof define === 'function' && define.amd)
 		define([], factory);
 	else if(typeof exports === 'object')
-		exports["spotifyApiCourse"] = factory();
+		exports["SpotifyApiCourse"] = factory();
 	else
-		root["spotifyApiCourse"] = factory();
+		root["SpotifyApiCourse"] = factory();
 })(typeof self !== 'undefined' ? self : this, function() {
 return /******/ (function(modules) { // webpackBootstrap
 /******/ 	// The module cache
@@ -70,54 +70,11 @@ return /******/ (function(modules) { // webpackBootstrap
 /******/ 	__webpack_require__.p = "";
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 0);
+/******/ 	return __webpack_require__(__webpack_require__.s = 1);
 /******/ })
 /************************************************************************/
 /******/ ([
 /* 0 */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-
-var _main = __webpack_require__(1);
-
-module.exports = {
-  search: _main.search,
-  searchArtists: _main.searchArtists,
-  searchAlbums: _main.searchAlbums,
-  searchTracks: _main.searchTracks,
-  searchPlaylists: _main.searchPlaylists
-};
-
-/***/ }),
-/* 1 */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-
-Object.defineProperty(exports, "__esModule", {
-  value: true
-});
-exports.searchPlaylists = exports.searchTracks = exports.searchAlbums = exports.searchArtists = exports.search = undefined;
-
-var _config = __webpack_require__(2);
-
-var search = exports.search = function search(query, type) {
-  return fetch(_config.API_URL + '/search?q=' + query + '&type=' + type).then(_config.toJSON);
-};
-
-var searchArtists = exports.searchArtists = function searchArtists(query) {
-  return search(query, 'artist');
-};
-
-var searchAlbums = exports.searchAlbums = function searchAlbums() {};
-var searchTracks = exports.searchTracks = function searchTracks() {};
-var searchPlaylists = exports.searchPlaylists = function searchPlaylists() {};
-
-/***/ }),
-/* 2 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -131,7 +88,96 @@ var toJSON = exports.toJSON = function toJSON(data) {
   return data.json();
 };
 
+/***/ }),
+/* 1 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+module.exports = __webpack_require__(2).default;
+
+/***/ }),
+/* 2 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+var _main = __webpack_require__(3);
+
+var _main2 = _interopRequireDefault(_main);
+
+var _config = __webpack_require__(0);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+var SpotifyApiCourse = function () {
+  function SpotifyApiCourse(options) {
+    _classCallCheck(this, SpotifyApiCourse);
+
+    this.apiURL = options.apiURL || _config.API_URL;
+    this.token = options.token;
+    this.search = _main2.default.bind(this)();
+  }
+
+  _createClass(SpotifyApiCourse, [{
+    key: 'request',
+    value: function request(url) {
+      var headers = {
+        headers: { Authorization: 'Bearer ' + this.token }
+      };
+      return fetch(url, headers).then(_config.toJSON);
+    }
+  }]);
+
+  return SpotifyApiCourse;
+}();
+
+exports.default = SpotifyApiCourse;
+
+/***/ }),
+/* 3 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.default = search;
+
+var _config = __webpack_require__(0);
+
+function search() {
+  var _this = this;
+
+  return {
+    searchUrl: function searchUrl(query, type) {
+      return _this.request(_config.API_URL + '/search?q=' + query + '&type=' + type);
+    },
+    searchArtists: function searchArtists(query) {
+      var type = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : 'artist';
+
+      return this.searchUrl(query, type);
+    },
+
+    searchAlbums: '',
+    searchTracks: '',
+    searchPlaylists: ''
+  };
+}
+
 /***/ })
 /******/ ]);
 });
-//# sourceMappingURL=bundle.js.map
+//# sourceMappingURL=app.js.map
