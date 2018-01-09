@@ -1,11 +1,13 @@
-import { API_URL, toJSON } from './config';
+import { API_URL } from './config';
 
-export const search = (query, type) =>
-  fetch(`${API_URL}/search?q=${query}&type=${type}`)
-    .then(toJSON);
-
-export const searchArtists = query => search(query, 'artist');
-
-export const searchAlbums = () => {};
-export const searchTracks = () => {};
-export const searchPlaylists = () => {};
+export default function search() {
+  return {
+    searchUrl: (query, type) => this.request(`${API_URL}/search?q=${query}&type=${type}`),
+    searchArtists(query, type = 'artist') {
+      return this.searchUrl(query, type);
+    },
+    searchAlbums: '',
+    searchTracks: '',
+    searchPlaylists: '',
+  };
+}
