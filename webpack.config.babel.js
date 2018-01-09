@@ -1,20 +1,20 @@
 import { join } from 'path';
+
 // const include = join(__dirname, 'src');
 
 /**
  * @output: library
  * Generate a global lib:function/factory
+ * Create a file export-umd.js
  */
-const config = {
-  devtool: 'source-map',
-  entry: {
-    filename: './source/index',
-  },
+export default {
+  entry: './export-umd',
   output: {
     path: join(__dirname, 'build'),
     libraryTarget: 'umd',
-    library: 'spotifyApiCourse',
+    library: 'SpotifyApiCourse',
   },
+  devtool: 'source-map',
   module: {
     loaders: [
       {
@@ -25,5 +25,3 @@ const config = {
     ],
   },
 };
-
-module.exports = config;
