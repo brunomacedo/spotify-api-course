@@ -1,7 +1,5 @@
 import { join } from 'path';
 
-// const include = join(__dirname, 'src');
-
 /**
  * @output: library
  * Generate a global lib:function/factory
