@@ -95,6 +95,9 @@ var toJSON = exports.toJSON = function toJSON(data) {
 "use strict";
 
 
+/**
+ * Export this file, this way to generate UMD
+ */
 module.exports = __webpack_require__(2).default;
 
 /***/ }),
