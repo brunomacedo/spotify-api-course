@@ -14,6 +14,7 @@
     "build": "npm run clear:build && npm run build:scripts && npm run build:scripts:min",
     "watch": "npm run build -- --watch",
     "lint": "./node_modules/.bin/eslint source/*.js",
+    "esfix": "./node_modules/.bin/eslint --fix \"**/*.{js,jsx}\" || ECHO.",
     "prepush": "npm run lint",
     "test": "./node_modules/.bin/mocha specs/**/*.spec.js --require babel-register",
     "test:tdd": "npm run test -- --watch",
