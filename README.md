@@ -64,6 +64,16 @@ This is a problem when using npm run, it has to do with Mocha exiting with code 
 },
 ```
 
+### Solve LF replace to CRLF on Git
+
+This command will solve the problem with linebreak replacement on `git commit`.
+
+```prompt
+git config --global core.autocrlf input
+```
+
+![eslint-magic](screenshot/autocrlf.png)
+
 ## License
 
 This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details
