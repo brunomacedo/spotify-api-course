@@ -64,7 +64,7 @@ This is a problem when using npm run, it has to do with Mocha exiting with code 
 },
 ```
 
-### Solve LF replace to CRLF on Git
+### 3.0 - Solve LF replace to CRLF on Git
 
 This command will solve the problem with linebreak replacement on `git commit`.
 
