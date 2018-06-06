@@ -19,7 +19,8 @@
     "test": "./node_modules/.bin/mocha specs/**/*.spec.js --require babel-register",
     "test:tdd": "npm run test -- --watch",
     "test:coverage": "npm run clear:coverage && nyc npm run test",
-    "server": "./node_modules/.bin/webpack-dev-server --inline --content-base examples"
+    "server": "./node_modules/.bin/webpack-dev-server --inline --content-base examples",
+    "start": "npm run server"
   },
   "nyc": {
     "reporter": [
