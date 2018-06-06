@@ -1,5 +1,6 @@
 language: node_js
 node_js:
+  - "iojs"
   - "7"
 
 cache:
@@ -11,3 +12,6 @@ before_script:
 
 after_success:
   - npm run test:coverage
+
+on:
+  branch: master
