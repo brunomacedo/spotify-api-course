@@ -2,6 +2,9 @@
 
 A wrapper to work with the [Spotify Web API](https://developer.spotify.com/web-api/).
 
+[![npm](https://img.shields.io/badge/npm-v5.5.1-red.svg)](https://www.npmjs.com) [![mocha](https://img.shields.io/badge/mocha-v4.1.0-yellowgreen.svg)](https://mochajs.org/) ![passing](https://travis-ci.org/brunomacedo/spotify-api-course.svg?branch=master)
+
+
 ## About the course
 
 TDD with JavaScript Course by William Justen
