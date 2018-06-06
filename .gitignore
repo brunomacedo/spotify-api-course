@@ -30,7 +30,6 @@
 ### Node Modules ###
 /node_modules
 /node-json-generate
-package-lock.json
 
 # Build and Release Folders
 bin/
