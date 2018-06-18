@@ -1,6 +1,6 @@
-import { expect } from "chai";
-import { API_URL } from "../source/config";
-import SpotifyApiCourse from "../source/index";
+import { expect } from 'chai';
+import { API_URL } from '../source/config';
+import SpotifyApiCourse from '../source/index';
 
 describe('Index: Spotify Api Course', () => {
   it('Should create an instace of SpotifyApiCourse', () => {
@@ -10,7 +10,7 @@ describe('Index: Spotify Api Course', () => {
 
   it('Should receive apiURL as an option', () => {
     const spotify = new SpotifyApiCourse({
-      apiURL: 'url'
+      apiURL: 'url',
     });
     expect(spotify.apiURL).to.be.equal('url');
   });
@@ -22,7 +22,7 @@ describe('Index: Spotify Api Course', () => {
 
   it('Should receive token as an option', () => {
     const spotify = new SpotifyApiCourse({
-      token: 'salt'
+      token: 'salt',
     });
     expect(spotify.token).to.be.equal('salt');
   });
