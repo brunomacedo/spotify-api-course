@@ -70,5 +70,8 @@
     "sinon-stub-promise": "^4.0.0",
     "webpack": "^3.10.0",
     "webpack-dev-server": "^2.9.7"
+  },
+  "dependencies": {
+    "node-fetch": "^2.1.2"
   }
 }
