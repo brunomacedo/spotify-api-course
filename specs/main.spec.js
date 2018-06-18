@@ -1,7 +1,10 @@
 import chai, { expect } from 'chai';
 import sinon from 'sinon';
-import sinonChai from "sinon-chai";
-import sinonStubPromise from "sinon-stub-promise";
+import sinonChai from 'sinon-chai';
+import sinonStubPromise from 'sinon-stub-promise';
+
+import SpotifyApiCourse from '../source/index';
+import { API_URL } from '../source/config';
 
 /**
  * @node-fetch
@@ -11,12 +14,6 @@ chai.use(sinonChai);
 sinonStubPromise(sinon);
 global.fetch = require('node-fetch');
 
-/**
- * Import my functions
- */
-import SpotifyApiCourse from "../source/index";
-import { API_URL } from '../source/config';
-
 describe('Main: Spotify Api Course', () => {
   let spotify;
   let fetchedStub;
@@ -24,7 +21,7 @@ describe('Main: Spotify Api Course', () => {
 
   beforeEach(() => {
     spotify = new SpotifyApiCourse({
-      token: 'foo'
+      token: 'foo',
     });
     fetchedStub = sinon.stub(global, 'fetch');
     promise = fetchedStub.returnsPromise();
@@ -71,13 +68,13 @@ describe('Main: Spotify Api Course', () => {
 
       it('Should return the json data from the promise', () => {
         promise.resolves({
-          body: 'json'
+          body: 'json',
         });
 
         const artists = spotify.search.searchArtists('Incubus', 'artist');
 
         expect(artists.resolveValue).to.be.eql({
-          body: 'json'
+          body: 'json',
         });
       });
 
@@ -108,6 +105,5 @@ describe('Main: Spotify Api Course', () => {
           .calledWith(`${API_URL}/search?q=Incubus&type=artist`);
       });
     });
-
   });
 });
